@@ -8,7 +8,7 @@ import os
 SUBJECTS = ["ds", "dbms", "os", "cn", "se"]
 ELECTIVES = ["Artificial Intelligence", "Full Stack Web Development", "Cloud Computing", "Cybersecurity"]
 
-def generate_synthetic_data(num_samples=1000):
+def generate_synthetic_data(num_samples=10000):
     np.random.seed(42)
     data = []
     for _ in range(num_samples):
