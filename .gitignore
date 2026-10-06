@@ -60,3 +60,7 @@ coverage.xml
 *.py,cover
 .hypothesis/
 .pytest_cache/
+
+
+# frontend packages
+node_modules/
