@@ -3,7 +3,7 @@ from app.database import student_collection
 from app.schemas.student import student_entity, student_list_entity
 from app.models.student import StudentCreate, StudentUpdate
 
-async def create_student(student: StudentCreate):
+async def create_student(student: StudentCreate):  
     student_dict = student.model_dump()
     student_dict["_id"] = str(uuid.uuid4())
     await student_collection.insert_one(student_dict)
@@ -11,7 +11,7 @@ async def create_student(student: StudentCreate):
     return student_entity(new_student)
 
 async def get_all_students():
-    students = await student_collection.find().to_list(1000)
+    students = await student_collection.find().to_list()
     return student_list_entity(students)
 
 async def get_student(id: str):
